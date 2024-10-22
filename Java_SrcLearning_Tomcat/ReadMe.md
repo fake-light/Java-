@@ -226,7 +226,7 @@ private void sendResponseHeader() throws IOException {
 
 ​	发送响应体
 
-```
+```java
 private void sendResponseBody() throws IOException {
     byte[] body = getOutputStream().getBody();
     int pos = getOutputStream().getPos();
