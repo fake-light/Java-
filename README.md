@@ -1,1 +1,1 @@
-# JavaLearningDoc
+# LearningDoc
