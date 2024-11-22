@@ -1,15 +1,17 @@
 {
-  "type": "module",
-  "name": "xdaofanyi",
+  "name": "fanyi",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "axios": "^1.7.7"
+    "axios": "^1.6.1",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0"
   }
 }
