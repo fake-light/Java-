@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "xdaofanyi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
