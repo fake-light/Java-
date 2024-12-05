@@ -22,7 +22,7 @@
 
 #### 3.2断点调试
 
-​	此时再刷新页面就会停在我们的debugger中，通过右侧的Call Back查看调用堆栈即可找到生成逻辑的位置。![image-20241022145535731](E:\学习笔记\JavaLearningDoc\逆向\RPC过某直聘zp_stoken.assets\image-20241022145535731.png)
+​	此时再刷新页面就会停在我们的debugger中，通过右侧的Call Back查看调用堆栈即可找到生成逻辑的位置。![image-20241022145535731](RPC过某直聘zp_stoken.assets\image-20241022145535731.png)
 
 最终跟到他的js，发现这边将a变量的值插入了cookie，查看a的值果然是我们要找的token值,往上翻a是咋来的。
 
