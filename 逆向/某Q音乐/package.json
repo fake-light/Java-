@@ -1,0 +1,11 @@
+{
+  "name": "qq_music_sign",
+  "version": "1.0.0",
+  "main": "qq_music_sign.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
