@@ -46,7 +46,8 @@
 
 ​	**jwt**：JsonWebToken，用于根据用户信息生成一个用于身份校验的令牌（token）。
 
-![image-20241008110248180](E:\学习笔记\面试\SpringSecurity.assets\image-20241008110248180.png)
+![请添加图片描述](https://i-blog.csdnimg.cn/direct/3323d9e2f55a4cc2bf19c987ce7ea32a.png)
+
 
 #### 2.2、原理
 
@@ -54,19 +55,22 @@
 
 ​	内部包含一个过滤器链，有很多的过滤器组成。原始的主要过滤器如下图所示
 
-![image-20241008110717439](E:\学习笔记\面试\SpringSecurity.assets\image-20241008110717439.png)
+![请添加图片描述](https://i-blog.csdnimg.cn/direct/5b0eb9a8b0d74434bf0a1c423776f356.png)
+
 
 ​	首先通过第一个过滤器认证用户名密码是否正确，第二个用于处理鉴权过程中抛出的异常，第三个主要用于进行授权，确定用户包含哪些权限，是否有权限访问相关资源。
 
 ##### 2.2.2、认证流程详解
 
-![image-20241008112941242](E:\学习笔记\面试\SpringSecurity.assets\image-20241008112941242.png)
+![请添加图片描述](https://i-blog.csdnimg.cn/direct/1db6f4d4798a4b6980ce9c7f3a99e3fb.png)
+
 
 ​	需要重新实现UserDetailsService中的loadUserByUsername方法，修改获取流程，原本是从内存中获取，修改为从数据库中获取用户信息，并重新进行封装。
 
 ​	替换第一个Fillter，写一个controller实现自己的登录流程，再调用ProviderManager中的方法重新走SpringSecurity的过滤链流程，最终完成下面的流程实现定制开发。
 
-![image-20241008113834530](E:\学习笔记\面试\SpringSecurity.assets\image-20241008113834530.png)
+![请添加图片描述](https://i-blog.csdnimg.cn/direct/9839819228bd4c61be4fdf87ff44ff85.png)
+
 
 ​	最后认证通过生成jwt信息后可以将用户信息存入redis，在加一个fillter使用jwt解析用户发起请求中携带的jwt令牌获取到用户的userid，通过userid去redis查询用户的权限信息，将所有信息封装为Authentication对象再调用SecurityContextHolderContext.getcontext().setAuthentication()将对象存入，之后再走SpringSecurity的认证流程即可从里面取出信息进行认证了。
 
