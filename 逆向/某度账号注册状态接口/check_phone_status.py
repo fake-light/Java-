@@ -178,8 +178,6 @@ def checkPhoneStatus(phone):
     )
     response.encoding = 'utf-8'
 
-    response.text.replace('不存在', '未注册')
-    response.text.replace('已存在', '已注册')
     # 提取响应中的 JSON 数据
     callback_function_pattern = r'bd__cbs__\w+\((.*)\)'
     match = re.search(callback_function_pattern, response.text)
